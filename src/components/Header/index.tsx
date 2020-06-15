@@ -9,7 +9,7 @@ export default function Header_() {
       </div>
       
       <div>
-        <Link to="/add">Add Users</Link>
+        <Link to="/add">Add Costumer</Link>
       </div>
     </Header>
   );
