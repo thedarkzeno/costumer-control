@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { IState, IUser } from "../../store/types";
-import { Block, Card, Input } from "../../styles";
+import { Block, Card, Input, HButton } from "../../styles";
 import { UpdateUsers } from "../../store/actions";
 function Users() {
   const [state, setState] = useState({
@@ -35,9 +35,9 @@ function Users() {
             <div>Birth: {user.birth}</div>
             <div>Phone Number: {user.phoneNumber}</div>
             <Link to={`/edit/${index}`}>
-              <button>edit</button>
+              <HButton>edit</HButton>
             </Link>
-            <button onClick={() => handleDelete(index)}>delete</button>
+            <HButton onClick={() => handleDelete(index)}>delete</HButton>
           </Card>
         );
       }
@@ -50,9 +50,9 @@ function Users() {
         <div>Birth: {user.birth}</div>
         <div>Phone Number: {user.phoneNumber}</div>
         <Link to={`/edit/${index}`}>
-          <button>edit</button>
+          <HButton>edit</HButton>
         </Link>
-        <button onClick={() => handleDelete(index)}>delete</button>
+        <HButton onClick={() => handleDelete(index)}>delete</HButton>
       </Card>
     ));
   }
@@ -62,6 +62,7 @@ function Users() {
       <Block>
         <Input
           value={state.search}
+          placeholder="search"
           onChange={(e) => handleChange(e.target.value)}
         />
         {displayUsers()}
